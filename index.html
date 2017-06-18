@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl" data-ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+ <!--   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet"> -->
+    <link rel="stylesheet" href="icons/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-ng-controller="indexController" class="board">
+       <button data-ng-init='load' class="add-note" data-ng-click="addNote()">Dodaj notatkę!</button>
+       <div note></div>
+       <article id="askForDelete" class="ask-for-delete-container">
+           <div class="ask-for-delete">
+                <h4>Czy jesteś pewien, że chcesz usunąć?</h4>
+                <ul>
+                    <li data-ng-click='approveDelete()'>Tak! <i class="fa fa-check" aria-hidden="true"></i></li>
+                    <li data-ng-click='notApproveDelete()'>Nie! <i class="fa fa-times" aria-hidden="true"></i></li>
+                </ul>
+           </div>
+       </article>      
+       <article id="changeColor" class="change-color-container">
+           <ul class="change-color">
+                <li data-ng-click="chooseColor()" data-ng-repeat="color in colors" style="background-color:{{color.light}};" class="new-color" data-color-dark='{{color.dark}}' data-color-light='{{color.light}}'></li>
+           </ul>
+       </article>   
+       <article class="mobile">
+           <h2>Zbyt mały ekran dla tej aplikacji :c</h2>
+       </article>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

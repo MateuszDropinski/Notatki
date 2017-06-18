@@ -1,0 +1,21 @@
+<article style="top:150px;left:50px;  width:250px;"  class="note" data-note-number='note{{$id}}'>
+        <div class="grab-note"></div> 
+        <i data-ng-click="openOptions()" class="open-options fa fa-cog" aria-hidden="true"></i>      
+        <section style="min-height:225px;max-height:{{maxHeight+'px'}}" class="note-content">
+            <footer class="note-footer">
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width:{{percentage + '%'}};background-color:{{barColor}};"></div>
+                    <p data-ng-bind="percentage + '%'" class="percentage"></p>
+                </div>
+            </footer>            
+        </section>        
+         <section class="options">
+            <ul class="options-list">
+                <li data-ng-click="closeOptions()">Zamknij <i class="fa fa-times" aria-hidden="true"></i></li>
+                <li data-ng-click="addText()">Dodaj tekst <i class="fa fa-align-justify" aria-hidden="true"></i></li>
+                <li data-ng-click="addTasks()">Dodaj zadanie <i class="fa fa-thumb-tack" aria-hidden="true"></i></li>
+                <li data-ng-click="changeColor()">Zmień kolor<i class="fa fa-paint-brush" aria-hidden="true"></i></li>                
+                <li data-ng-click='deleteNote()'>Usuń<i class="fa fa-trash" aria-hidden="true"></i></li>
+            </ul>
+        </section> 
+</article>
